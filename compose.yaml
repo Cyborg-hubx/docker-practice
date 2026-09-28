@@ -1,0 +1,16 @@
+name: docker-practice
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: docker_user
+      POSTGRES_PASSWORD: docker_password
+      POSTGRES_DB: docker_practice_db
+    ports:
+      - "5432:5432"
